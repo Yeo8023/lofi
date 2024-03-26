@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <img src="asset/logo yeo2.png" alt="Logo" class="logo" />
+        <ul>
+          <li class="mobile"><a href="home.html">Home</a></li>
+          <li class="mobile"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="center-container">
+      <img id="timeBasedImage" src="asset/frame.gif" />
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.4"
+      />
+      <audio id="myAudio" loop onload="playAudio()">
+        <source src="asset/ambassador.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <button class = button id="playButton">Play</button>
+      <button class = button id="pauseButton">Pause</button>
+      <div class="tape">
+        <img id="tape" src="asset/Screenshot 2024-03-26 210124.png" />
+        <img id="circle1" src="asset/Screenshot 2024-03-26 210232.png" />
+        <img id="circle2" src="asset/Screenshot 2024-03-26 210232.png" />
+    </div>
+  </body>
+</html>
+
+<script>
+  window.onload = function () {
+    var img = document.getElementById("timeBasedImage"); // Select the image by id
+    var body = document.body; // Select the body
+    var date = new Date(); // Get the current date and time
+    var hour = date.getHours(); // Get the current hour
+
+    // Add this to play the audio
+    var audio = document.getElementById("myAudio");
+    audio.load(); // Load the audio file
+    
+    // Change the image source and background color based on the current hour
+    if (hour >= 6 && hour < 12) {
+      img.src = "asset/frame.gif";
+      img.style.backgroundColor = "aqua";
+      audio.src = "asset/frame of mind.mp3";
+    } else if (hour >= 12 && hour < 18) {
+      img.src = "asset/frame2.gif";
+      img.style.backgroundColor = "orange";
+      audio.src = "asset/frame of mind.mp3";
+    } else {
+      img.src = "asset/frame3.gif";
+      img.style.backgroundColor = "black";
+      audio.src = "asset/ambassador.mp3";
+    }
+
+
+    // Play the audio when the play button is clicked
+    var playButton = document.getElementById("playButton");
+    playButton.onclick = function () {
+      audio.play();
+    };
+
+    // Pause the audio when the pause button is clicked
+    var pauseButton = document.getElementById("pauseButton");
+    pauseButton.onclick = function () {
+      audio.pause();
+    };
+
+    // Get the volume slider
+    var volumeSlider = document.getElementById("volumeSlider");
+
+    // Update the volume of the audio element whenever the slider value changes
+    volumeSlider.oninput = function () {
+      audio.volume = this.value;
+    };
+  };
+</script>

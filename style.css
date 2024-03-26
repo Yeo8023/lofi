@@ -1,0 +1,146 @@
+/* Global styles */
+body {
+  background-color: #030a41;
+}
+
+/* Logo styles */
+.logo {
+  position: relative;
+  top: 0;
+  left: 10;
+  height: 60px;
+  width: 60px;
+  border: 10px solid black;
+  border-radius: 20px;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+}
+
+ul {
+  display: flex;
+}
+
+.navbar {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+nav li a {
+  display: block;
+  color: #5cdb95;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav li a:hover {
+  background-color: gray;
+  border-radius: 20%;
+}
+
+/* Container styles */
+.center-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 420px;
+  width: 1200px;
+}
+
+#timeBasedImage {
+  /* position: absolute; */
+  height: 400px;
+  width: 800px;
+  background-color: aqua;
+  border: 10px solid black;
+  border-radius: 20px;
+}
+
+#volumeSlider {
+  position: absolute;
+  top: 200px;
+  right: -100px;
+  width: 250px; /* Full width */
+  height: 15px; /* Specified height */
+  transform: rotate(270deg); /* Rotate the slider to vertical */
+}
+
+/*tape*/
+#tape {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  height: 150px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20px;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#playButton {
+  position: absolute;
+  top: 270px;
+  right: 250px;
+  height: 50px;
+  width: 50px;
+}
+
+#pauseButton {
+  position: absolute;
+  top: 270px;
+  right: 190px;
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#circle1 {
+  position: absolute;
+  top: 162px;
+  right: 157px;
+  height: 32px;
+  width: 32px;
+  animation: rotate 2s linear infinite;
+}
+
+#circle2 {
+  position: absolute;
+  top: 162px;
+  right: 230px;
+  height: 32px;
+  width: 32px;
+  animation: rotate 2s linear infinite;
+}
